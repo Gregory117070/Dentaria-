@@ -1,0 +1,215 @@
+<!DOCTYPE html>
+<html lang="es"><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Anatomía Dentaria · Parcial 1 · para Joe</title>
+<style>
+:root{--bg:#fdf6fb;--card:#fff;--tx:#2d2236;--mut:#6f6379;--pri:#9b3fa0;--pri2:#e86aa6;--ok:#2e9e6b;--bad:#d9455f;--soft:#f5e6f3;--bd:#ecd9ea;box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}
+@media(prefers-color-scheme:dark){:root:not([data-theme="light"]){--bg:#1c1522;--card:#2a2032;--tx:#f3eaf6;--mut:#b7a8c0;--pri:#d58be0;--pri2:#f08cbc;--soft:#382a42;--bd:#46354f}}
+:root[data-theme="dark"]{--bg:#1c1522;--card:#2a2032;--tx:#f3eaf6;--mut:#b7a8c0;--pri:#d58be0;--pri2:#f08cbc;--soft:#382a42;--bd:#46354f}
+html,body{margin:0}
+body{background:var(--bg);color:var(--tx);font:16px/1.55 system-ui,-apple-system,"Segoe UI",sans-serif;min-height:100%}
+main{max-width:720px;margin:0 auto;padding:16px}
+h1{font-size:1.5rem;margin:.2em 0}h2{font-size:1.2rem;margin:.3em 0}
+.hero{background:linear-gradient(135deg,var(--pri),var(--pri2));color:#fff;border-radius:22px;padding:20px;margin-bottom:16px}
+.hero p{margin:.3em 0;opacity:.95}
+.card{background:var(--card);border:1px solid var(--bd);border-radius:18px;padding:14px 16px;margin:10px 0}
+.mod{display:flex;gap:12px;align-items:center;cursor:pointer;width:100%;text-align:left;color:inherit;font:inherit}
+.mod .em{font-size:1.8rem;background:var(--soft);border-radius:14px;width:52px;height:52px;display:grid;place-items:center;flex:none}
+.mod small{color:var(--mut)}
+.bar{height:8px;background:var(--soft);border-radius:8px;overflow:hidden;margin-top:6px}
+.bar i{display:block;height:100%;background:linear-gradient(90deg,var(--pri),var(--pri2));width:0}
+button{font:inherit;cursor:pointer}
+.btn{background:linear-gradient(90deg,var(--pri),var(--pri2));color:#fff;border:0;border-radius:14px;padding:12px 18px;font-weight:600}
+.btn.alt{background:var(--soft);color:var(--tx)}
+.row{display:flex;gap:8px;flex-wrap:wrap;margin:10px 0}
+.opt{display:block;width:100%;text-align:left;background:var(--card);color:var(--tx);border:2px solid var(--bd);border-radius:14px;padding:12px;margin:8px 0}
+.opt.ok{border-color:var(--ok);background:rgba(46,158,107,.15)}
+.opt.no{border-color:var(--bad);background:rgba(217,69,95,.14)}
+.pt{padding:10px 12px;border-left:4px solid var(--pri2);background:var(--soft);border-radius:0 12px 12px 0;margin:8px 0}
+.tutor{display:flex;gap:10px;align-items:flex-start;background:var(--soft);border-radius:16px;padding:12px;margin:10px 0}
+.tutor span{font-size:1.5rem}
+.tabs{display:flex;gap:8px;margin:10px 0}.tabs button{flex:1}
+.top{display:flex;justify-content:space-between;align-items:center;gap:8px}
+.big{font-size:2.4rem;font-weight:800;color:var(--pri);text-align:center}
+</style></head><body><main id="app"></main>
+<script>
+// Formato pregunta: [enunciado, correcta, mala1, mala2, mala3, explicación]
+const M=[
+{e:"🧭",t:"Concepto y relación con otras materias",p:[
+"**Definición clásica (Igarino, 2002):** ciencia descriptiva y estática. **Concepto dinámico:** sistema de engranajes con morfología (el diente como ente aislado: partes, estructuras, variaciones), función (procesos en que intervienen los dientes) y relaciones (vecinos, arco opuesto, estructuras de soporte y orofaciales).",
+"**Nelson y Ash (2010):** estudio del desarrollo, la morfología, la función y la identificación de cada diente de las denticiones humanas y cómo se relacionan en tamaño, forma, estructura, color y función con los demás, de la misma arcada y de la opuesta. Forma y función están íntimamente relacionadas; el objetivo es la armonía de los arcos y de todo el sistema estomatognático.",
+"**Endodoncia:** enfermedades de la pulpa; exige conocer forma y ubicación de la cámara pulpar y número, ubicación y orientación de los conductos. Nomenclatura: cavidad pulpar, cámara, conducto radicular, pulpa, cuernos pulpares, ápice, foramen apical.",
+"**Patología y clínica:** el mismo foco purulento tiene distinta difusión según sea diente superior/inferior, anterior/posterior (ej.: incisivo lateral superior vs. tercer molar inferior). **Operatoria:** reproducir fosas, crestas, puntos de contacto, contornos, planos inclinados, ranuras, concavidades y convexidades; chequear la oclusión al inicio y al final.",
+"**Prótesis:** fija (conocer espesores dentarios para tallar), removible (mayores alturas de contorno para ubicar ganchos), mantener guía anterior y canina; evaluar inserciones musculares, ligamentos y frenillos. **Odontopediatría:** dentición mixta, orden de emergencia y exfoliación. **Ortodoncia:** guía canina y relación molar adecuadas (no solo estética).",
+"**Radiología:** panorámicas, periapicales, coronales (aleta de mordida), oclusales y cefálicas laterales. **Periodoncia:** encía, hueso alveolar, ligamento periodontal, cemento; la mala morfología o restauraciones defectuosas favorecen la enfermedad periodontal. **Cirugía:** exodoncia (forma de corona, nº de raíces y cúspides), referencias para anestesia. **Histología:** microestructura dentaria.",
+"**Maloclusiones:** dentarias (malposición dental, bases óseas normales), esqueléticas (defecto en las bases óseas; se resuelven con cirugía), funcionales (alteración de la dinámica mandibular por alteraciones musculares) y mixtas. Los estudios cefalométricos determinan el tipo con exactitud."],
+q:[["¿Cómo se estudia la anatomía dentaria según el concepto dinámico?","Como un sistema de engranajes: morfología, función y relaciones","Como una ciencia únicamente descriptiva y estática","Solo como la forma externa de cada diente","Solo por su composición histológica","El concepto dinámico escapa del precepto estático e integra morfología, función y relaciones."],
+["¿Qué materia exige conocer número y orientación de los conductos radiculares?","Endodoncia","Periodoncia","Radiología","Ortodoncia","La endodoncia trata la pulpa y requiere conocer cámara y conductos."],
+["Una maloclusión cuyo defecto está en las bases óseas es:","Esquelética","Dentaria","Funcional","Ninguna: siempre es dentaria","En la esquelética hay exceso o falta de crecimiento de los maxilares; se resuelve con cirugía."],
+["En prótesis removible, las mayores alturas de contorno sirven para:","Ubicar ganchos o elementos de retención","Calcular espesores de tallado","Medir la guía incisal","Identificar el orden de erupción","En prótesis fija se conocen espesores; en removible, los contornos para los ganchos."]]},
+
+{e:"📐",t:"Nomenclatura básica y detalles anatómicos",p:[
+"**Caras:** anteriores = 4 caras + borde incisal (vestibular, lingual/palatina, mesial, distal). Posteriores = 5 caras (V, L/P, M, D, **oclusal**). Vestibular = labial, facial o bucal. **Mesial** = más próxima a la línea media; **distal** = se aleja. Caras libres: V, P, L. Proximales: M y D (punto de contacto; nicho gingival que aloja la papila interdental).",
+"**Tercios de la corona:** inciso/ocluso-cervical, mesio-distal y vestíbulo-palatino/lingual. **Raíz:** cervical, medio y apical. **Eje largo:** línea imaginaria del borde incisal u oclusal al ápice. **Cara axial:** relativa al eje largo.",
+"**Ángulos diedros** (2 caras): 8 en anteriores (mesio-vestibular, disto-vestibular, mesio-lingual/palatino, disto-lingual/palatino, vestíbulo-incisal, inciso-lingual/palatino, mesio-incisal, disto-incisal) y 8 en posteriores (con oclusal). **Triedros** (3 caras): 4 en anteriores (ej.: mesio-vestíbulo-incisal) y 4 en posteriores (ej.: mesio-vestíbulo-oclusal).",
+"**Lóbulos de desarrollo:** incisivos, caninos y mayoría de premolares = 4 (3 vestibulares + 1 lingual/palatino); segundos molares = 4 (2V + 2L); primeros molares = 5 (sup.: 2V + 3P; inf.: 3V + 2L). Donde se fusionan quedan las **ranuras de desarrollo**. **Cíngulo** = cuarto lóbulo de anteriores, tercio cervical lingual/palatino. **Mamelones:** eminencias en el borde incisal recién erupcionado.",
+"**Cresta:** elevación longitudinal de esmalte. **Cúspide:** elevación formada por la unión de cuatro crestas (caninos, premolares, molares; no en incisivos). **Fosa:** depresión cóncava (mesial, central, distal); **fosita:** su parte más profunda. **Ranura central:** primaria, de fosita mesial a distal; **ranuras triangulares:** parten de las fositas hacia los ángulos triedros. **Tubérculo de Carabelli:** cara palatina de 1.ºs molares superiores permanentes y 2.ºs molares superiores primarios.",
+"**Corona anatómica:** cubierta por esmalte, hasta la línea cervical. **Corona clínica:** la expuesta en boca. **Línea cervical** = unión amelocementaria. **Raíz:** cubierta por cemento. **Alvéolo, hueso alveolar, ligamento periodontal, encía, eminencia canina** (sobre el canino, separa alvéolos incisivo y canino). **Planos inclinados:** áreas entre crestas y ranuras primarias en cúspides. **Abrasión:** desgaste mecánico. **Bifurcación:** raíz dividida en dos ramas."],
+q:[["¿Cuántas caras tiene un diente posterior?","5","4","3","6","Vestibular, lingual/palatina, mesial, distal y oclusal."],
+["Una cúspide se forma por la unión de:","Cuatro crestas","Dos fosas","Tres ranuras","Dos crestas marginales","Por eso no existe en los incisivos."],
+["El tubérculo de Carabelli se ubica en:","Cara palatina del 1.er molar superior permanente","Cara lingual del 1.er molar inferior","Cíngulo del canino superior","Borde incisal del incisivo central","También aparece en el 2.º molar superior primario."],
+["¿Cuántos ángulos triedros tienen los dientes anteriores?","4","8","2","6","Mesio y disto, vestíbulo-incisal y linguo/palato-incisal."],
+["El primer molar inferior deriva de:","5 lóbulos (3 vestibulares y 2 linguales)","4 lóbulos (2V y 2L)","3 lóbulos","5 lóbulos (2 vestibulares y 3 palatinos)","El superior tiene 2V + 3P; el inferior, 3V + 2L."]]},
+
+{e:"🦷",t:"Sistema estomatognático, diente y tejidos",p:[
+"**Sistema estomatognático:** entidad fisiológica funcional formada por músculos, huesos, ligamentos, sistema nervioso, ATM y sistema dentario; trabaja como engranaje. Funciones: masticación, deglución, fonación, respiración y succión.",
+"**Diente:** órgano muy duro, blanco amarillento, de tejidos de distinto origen (esmalte, dentina, pulpa, cemento), alojado en alvéolos. Desarrollo desde la **4.ª semana** intrauterina. **Funciones:** masticación (principal), estética, fonación y preservación. **Color:** permanentes blanco amarillento; primarios blanco azulado; el tercio cervical es más oscuro.",
+"**Forma del incisivo central superior:** cuadrada, ovoide o triangular (mujeres, más triangulares). Dureza no uniforme; los tejidos duros conducen y la pulpa está muy inervada. **Partes:** corona y raíz unidas en la unión cemento-esmalte (línea cervical). **Tronco radicular** y **furca** (bifurcación o trifurcación) en molares.",
+"**Esmalte:** 88% inorgánico, 2% orgánico, 10% agua; el más duro y mineralizado; liso (autolimpieza); origen ectodérmico (órgano del esmalte). **Dentina:** 50% inorgánica, 25% orgánica (colágeno), 25% agua; túbulos con prolongaciones de odontoblastos; elástica; origen mesodérmico (papila dental).",
+"**Pulpa:** conjuntivo laxo, muy vascularizado e inervado (paquete vasculonervioso); papila dental. **Cemento:** 50% orgánico y 50% inorgánico; fino en cervical y grueso hacia el ápice; sin túbulos ni sensibilidad; viene del saco dentario. **Complejo dentino-pulpar:** funciones formativa, nutritiva, reparadora/defensiva (dentina terciaria) y sensitiva.",
+"**Periodonto de inserción:** cemento, ligamento periodontal (fibras colágenas; fibras de Sharpey; sostiene, absorbe fuerzas, resiste torsión) y hueso alveolar (medular cubierto por cortical; interproximal e interradicular). **Periodonto de protección:** encía marginal o libre (~1 mm, forma papilas) y encía adherida (1–9 mm, puntillada «cáscara de naranja», hasta la línea mucogingival).",
+"**Anatomía interna:** cavidad pulpar = cámara + cuernos pulpares (techo y piso de la cámara) + conductos radiculares; el **ápice** termina en el **foramen apical**, por donde emerge el paquete vasculonervioso."],
+q:[["La composición del esmalte es:","88% inorgánico, 2% orgánico, 10% agua","50% inorgánico, 25% orgánico, 25% agua","50% orgánico, 50% inorgánico","70% agua","El esmalte es el tejido más mineralizado del cuerpo."],
+["El cemento dental proviene de:","El saco dentario","El órgano del esmalte","La papila dental","El ligamento periodontal","Esmalte = ectodermo; dentina y pulpa = papila dental; cemento = saco dentario."],
+["¿Qué caracteriza a la encía adherida?","Textura puntiforme y unión firme al hueso, de 1 a 9 mm","Mide 1 mm y forma las papilas","Es lisa y móvil","Está por encima del margen gingival","La libre o marginal es la de ~1 mm."],
+["Función del complejo dentino-pulpar ante una agresión:","Reparadora: induce dentina terciaria","Solo estética","Inserción de fibras","Producir esmalte","También es formativa, nutritiva y sensitiva."]]},
+
+{e:"👶",t:"Grupos dentarios y denticiones",p:[
+"**Incisivos:** 8; monorradiculares; prensión y corte, estética y fonación. **Caninos:** 4; raíz más larga y gruesa, eminencia canina; los más estables; desgarre y guía canina (amortiguan fuerzas laterales). **Premolares:** 8; solo permanentes; ≥2 cúspides («bicúspide» es incorrecto: los inferiores tienen de 1 a 3). **Molares:** multirradiculares; 8 primarios y 12 permanentes; soportan las mayores fuerzas; no sucedáneos.",
+"**Dentición primaria:** 20 dientes (10 y 10): incisivos 8, caninos 4, molares 8; **sin premolares**. Nombres desde la línea media: incisivo central, lateral, canino, 1.er y 2.º molar. Emerge desde ~6 meses (incisivos centrales inferiores) hasta 2–3 años (2.º molar). Entre 2 y 6 años solo hay dientes primarios. Importancia: masticación, dimensión vertical, espacio para permanentes, estímulo óseo y pulpa como fuente de células madre.",
+"**Recambio:** el germen permanente estimula la reabsorción radicular del temporal; pierde la raíz, se mueve y cae. **Dentición mixta:** 6–12 años; empieza con el 1.er molar inferior permanente (no sucedáneo, erupciona distal al 2.º molar primario) y termina con la exfoliación del último primario.",
+"**Dentición permanente:** 32 dientes (16 y 16): incisivos 8, caninos 4, premolares 8, molares 12. Solo **20** son sucedáneos; los 8 premolares reemplazan a los 8 molares primarios. Terceros molares: 17–22 años. Los inferiores suelen erupcionar antes que los superiores. 1.er molar inferior: germen al 4.º mes intrauterino; calcificación ~1 año.",
+"**Cuadro comparativo (primaria vs. permanente):** 20 dientes sin premolares vs. 32 con 8 premolares · blanco azulado vs. blanco amarillento · corona más ancha MD que alta con marcada constricción cervical vs. corona más alta que ancha con constricción suave · raíces largas, estrechas y muy divergentes vs. proporcionadas y menos divergentes · esmalte y dentina delgados, cámara amplia y cuernos muy prominentes vs. esmalte y dentina gruesos, cámara angosta."],
+q:[["¿Cuántos dientes tiene la dentición primaria?","20","24","28","32","10 superiores + 10 inferiores, sin premolares."],
+["¿Cuál suele ser el primer diente permanente en emerger?","1.er molar inferior","Incisivo central superior","Canino inferior","2.º premolar","No reemplaza a ningún primario."],
+["¿Cuántos dientes permanentes son sucedáneos?","20","32","28","12","Incisivos, caninos y premolares (los premolares reemplazan a los molares primarios)."],
+["Las raíces de los molares primarios son:","Largas, estrechas y muy divergentes","Cortas y paralelas","Únicas y cónicas","Iguales a las permanentes","Entre ellas se alojan los gérmenes de los premolares."]]},
+
+{e:"🔢",t:"Sistemas de numeración dental",p:[
+"**Referencias:** línea media (vertical, entre los incisivos centrales) y línea horizontal (separa arcada superior e inferior). Sirven para ubicar cuadrante derecho/izquierdo y superior/inferior.",
+"**Palmer:** símbolo de escuadra que marca el cuadrante + número/letra de posición. **Permanentes:** 1 a 8 desde el incisivo central hasta el tercer molar. **Primarios:** letras mayúsculas desde la A (incisivo central). *Nota de estudio: cada cuadrante primario tiene 5 dientes, por lo que la secuencia llega a la E; la guía menciona la D, confírmalo con tu profesor.*",
+"**Universal (ADA, 1968):** correlativo en sentido horario. **Permanentes 1–32:** 1 = 3.er molar superior derecho, 16 = 3.er molar superior izquierdo, 17 = 3.er molar inferior izquierdo, 32 = 3.er molar inferior derecho. **Primarios A–T:** A = 2.º molar superior derecho, J = superior izquierdo, K = inferior izquierdo, T = inferior derecho. Se usa en EE. UU., Canadá y algunas islas del Caribe y Centroamérica.",
+"**FDI (1970, Dr. Jochem Viehl, Berlín):** dos dígitos; adoptado por la OMS e IADR; el más usado del mundo y **el de la UCV**. Primer dígito = cuadrante; segundo = posición desde la línea media. **Permanentes:** 1 sup. derecho, 2 sup. izquierdo, 3 inf. izquierdo, 4 inf. derecho; dientes 1 al 8. **Primarios:** cuadrantes 5, 6, 7, 8; dientes 1 al 5. Se pronuncia por separado (uno-uno), aunque en la UCV se lee en conjunto (once).",
+"**Ejemplos del temario:** incisivo central sup. = FDI 11/21, Universal 8/9 · lateral sup. = 12/22, Universal 7/10 · central inf. = 41/31, Universal 25/24 · lateral inf. = 42/32, Universal 26/23 · canino sup. = 13/23, Universal 6/11 · canino inf. = 43/33, Universal 27/22. Palmer: central 1, lateral 2, canino 3."],
+q:[["En FDI, el incisivo central superior izquierdo permanente es:","21","11","31","61","Cuadrante 2 (superior izquierdo) + diente 1."],
+["En el sistema Universal, el tercer molar inferior derecho es el:","32","1","16","17","El 1 es el tercer molar superior derecho; el 32, el inferior derecho."],
+["En FDI primaria, el cuadrante 7 corresponde a:","Inferior izquierdo","Superior derecho","Superior izquierdo","Inferior derecho","5 SD, 6 SI, 7 II, 8 ID."],
+["¿Qué sistema se usa en la Facultad de Odontología de la UCV?","FDI","Palmer","Universal","Haderup","Es el más usado en el mundo."]]},
+
+{e:"⚙️",t:"Articuladores",p:[
+"**Definición:** aparatos mecánicos y rígidos que representan las ATM y los maxilares; junto con los modelos reproducen movimientos mandibulares y relaciones intermaxilares. **Funciones:** actuar como el paciente en su ausencia, enseñanza de la oclusión, diagnóstico y plan de tratamiento, análisis estático y dinámico, reconstrucción oclusal, diseño de prótesis fijas, removibles, totales y férulas, y alineación de dientes artificiales. Simulan, pero no duplican, el movimiento mandibular.",
+"**Ventajas:** relacionar cráneo y maxilares, arcadas en relación céntrica y excéntricas, observar relaciones interoclusales, la cooperación del paciente deja de ser crítica, vista lingual indispensable, menos tiempo en el sillón, saliva, lengua y carrillos no interfieren, se delega más al personal auxiliar. **Requisitos:** conservar relaciones (RC), retirar y recolocar modelos, construcción rígida y no corrosiva, ajustes fijables, distancia adecuada entre ramas.",
+"**Clasificación:** (1) de **bisagra** (solo apertura y cierre; Gariot 1805 oclusor de escayola; Saussine 1809 primer articulador de bisagra); (2) **anatómicos**: no ajustables, semiajustables, totalmente ajustables; (3) **fisiológicos o kinemáticos** (investigación). Historia: Bonwill 1858 (triángulo equilátero cóndilo–incisivo–cóndilo), Christensen 1901 (fenómeno), Snow 1907 (arco facial), Gysi 1908 (Trubyte, arco gótico), Hanau 1921 (articulación balanceada, plan Quint).",
+"**No ajustables:** trayectorias condilares fijas (Gysi-Trubyte, Verticulador); no para trabajos extensos ni prótesis totales. **Semiajustables:** los más usados; guía condilar y tabla incisal ajustables, guías laterales (Bennett); distancia intercondilar S, M o L; se usa arco facial. **Totalmente ajustables:** 3 planos, se programan con **pantógrafo**. **Arcón:** cajuelas en la rama superior, postes en la inferior (como la ATM; los de la UCV: Whip-Mix, Bio-Art, Gnatus). **No arcón:** inverso (ej.: Hanau; prótesis totales).",
+"**Whip-Mix** (Dr. Charles Stuart, 1963): serie 8500 (intercondilar S 96, M 110, L 124 mm; guía horizontal 0–70°; pared medial 0–45°), serie 2000 (marcos curvos, 110 mm fijos, bisagra 70°) y serie 3000 (fosa abierta). Se componen de rama superior, rama inferior y arco facial.",
+"**Rama superior:** pines de montaje del arco facial, pin de retención, cajuelas o guías condilares (guía horizontal en grados, guía lateral en mm), tornillos de ajuste, espaciadores (S ninguno, M uno y L dos por lado), copa de montaje, bandas elásticas. **Rama inferior:** postes condilares, cerrojo de montaje, copa inferior, mesa incisal y vástago incisal. **Arco facial:** brazos laterales, olivas auditivas, barra cruzada, soporte nasal, tornillos, marcas S-M-L y tenedor de mordida.",
+"**Montaje arbitrario (UCV):** guía horizontal en **30°** y guía lateral en **0 mm**; vástago incisal en la raya negra continua con la punta roma hacia la mesa incisal. Preparar modelos (tapar burbujas, línea en fondo de vestíbulo, recortar, cuatro muescas de retención), montar primero el **superior** sobre el modelo guía, luego el inferior verificando que los postes toquen pared posterior y techo de la cajuela; yeso parís, lija nº 100 y secar al sol."],
+q:[["Los articuladores de bisagra reproducen solamente:","Apertura y cierre","Lateralidad","Protrusiva","Todos los movimientos mandibulares","No reproducen lateralidad ni protrusiva."],
+["En un articulador tipo arcón, las cajuelas (cavidad glenoidea) están en:","La rama superior","La rama inferior","El arco facial","La mesa incisal","Igual que en la ATM, donde la glenoides está por encima del cóndilo."],
+["Distancias intercondilares del Whip-Mix 8500:","S 96, M 110, L 124 mm","S 90, M 100, L 110 mm","S 110, M 124, L 130 mm","Solo 110 mm","En las series 2000 y 3000 la distancia es fija (110 mm)."],
+["Valores para el montaje arbitrario:","Guía horizontal 30° y guía lateral 0 mm","Guía horizontal 0° y lateral 30 mm","Guía horizontal 45° y lateral 5 mm","Ambas en 70","Además, el vástago va en la raya negra continua."],
+["El articulador que se programa con un pantógrafo es el:","Totalmente ajustable","De bisagra","No ajustable","Arbitrario","Reproduce movimientos en 3 planos."]]},
+
+{e:"🔷",t:"Incisivos: grupo general y central superior",p:[
+"**Grupo incisivo:** 8 dientes permanentes (4 por arcada); con los caninos forman el segmento anterior. **Corona:** 4 caras + borde incisal; caras libres trapezoidales (base hacia incisal); proximales piramidales (base cervical, vértice incisal). Monorradiculares; 4 lóbulos de desarrollo (3 originan vestibular y palatina/lingual; el 4.º, el cíngulo). **Funciones:** prensión, corte (borde con borde), tránsito del alimento hacia posteriores, estética (no sacrificar función por estética) y fonética.",
+"**Incisivo central superior:** a cada lado de la línea media; contacta con su par por mesial, con el lateral por distal; ocluye con los incisivos centrales inferiores y la porción mesovestibular de los laterales inferiores. Es el **más grande** del grupo y es más ancho mesodistal que vestibulopalatino. Ángulo mesioincisal **recto (90°)**, distoincisal **redondeado**. Vestibular más plana. Mamelones que se desgastan hasta un borde recto.",
+"**Nomenclatura:** FDI 11 y 21 · Universal 8 y 9 · Palmer 1. **Cronología:** calcificación a los 3 meses · corona completa a los 4–5 años · erupción a los 7–8 años · raíz completa a ~10 años (2–3 años tras la erupción).",
+"**Vestibular:** tres lóbulos separados por ranuras mesio y distovestibular (central: más ancho, grande y largo; mesial: 2.º en longitud y 3.º en ancho; distal: 3.º en longitud y 2.º en ancho). Tercio cervical muy convexo; línea cervical curva con concavidad hacia incisal. **Palatina:** más pequeña por convergencia proximal; cíngulo convexo, **fosa palatina** cóncava, crestas marginales mesial y distal.",
+"**Clasificación de Black (cara palatina):** Tipo I, crestas marginales y cíngulo sin prolongaciones · Tipo II, una prolongación hacia el cíngulo · Tipo III, dos prolongaciones (la más común; fosa dividida en tres concavidades) · Tipo IV, tres prolongaciones · Tipo V, crestas muy largas, el cíngulo no emite prolongaciones y una ranura cruza el cíngulo (característica de la raza asiática).",
+"**Proximales:** triangulares. El borde palatino tiene forma de «S». La cara **mesial** tiene el punto de contacto más cerca del borde incisal y una concavidad para la papila; la **distal** es más pequeña, con línea cervical menos curva y contacto más alejado del borde incisal. **Vista incisal:** contorno triangular con base vestibular. **Raíz:** única, 1,5 veces la corona, cono con ápice romo; sección triangular. **Pulpa:** una cámara con 3 cuernos y un conducto central."],
+q:[["¿Cómo es el ángulo mesioincisal del incisivo central superior?","Recto (90°)","Redondeado","Obtuso","Agudo","El distoincisal es redondeado."],
+["¿Cuándo erupciona el incisivo central superior?","7–8 años","6–7 años","8–9 años","11–12 años","El inferior lo hace a los 6–7 años."],
+["¿Qué número FDI tiene el central superior derecho?","11","21","41","12","Palmer 1; Universal 8."],
+["La clasificación de Black más común de la cara palatina es el tipo:","III","I","V","IV","Tiene dos prolongaciones hacia el cíngulo."],
+["El grupo incisivo está formado por ___ dientes permanentes.","8","4","12","6","Cuatro por arcada."]]},
+
+{e:"🔶",t:"Incisivo lateral superior",p:[
+"**Ubicación:** segundo diente desde la línea media, entre el central y el canino superiores. Su cara mesial contacta al central y su distal al canino. Ocluye con el lateral inferior y la porción mesial del canino inferior.",
+"**Diferencias con el central:** más corto y estrecho; ángulo mesioincisal **más redondeado** y distoincisal marcadamente curvo; borde incisal más curvo; cíngulo **más pequeño pero más convexo**; fosa palatina **más profunda** (suele terminar en un surco o fosita profunda); crestas marginales más prominentes; silueta más ovoide.",
+"**Nomenclatura:** FDI 12 y 22 · Universal 7 y 10 · Palmer 2. **Cronología:** calcificación al año de vida · corona completa a los 4–5 años · erupción a los 8–9 años · raíz completa a los 10–11 años.",
+"**Vestibular:** más convexa que la del central; ranuras menos marcadas; tres lóbulos (el centrovestibular el mayor). El borde distal diverge notablemente del eje en el tercio incisal. **Palatina:** dos crestas marginales muy elevadas y fosa muy cóncava; puede haber una fosita o ranura que se extiende por el cíngulo hasta la raíz; se clasifica con los 5 tipos de Black.",
+"**Proximales:** triangulares, base cervical y vértice incisal; el tercio incisal se inclina hacia lingual para favorecer el **overbite**; el contacto distal está más alejado del borde incisal. **Vista incisal:** ovoide, con ángulos muy redondeados; la dimensión vestíbulolingual puede superar a la mesodistal.",
+"**Raíz:** única, más delgada que la del central, con curvatura apical frecuente; la cara mesial puede tener concavidad. **Pulpa:** una cámara y un conducto, **sin los tres cuernos** de forma regular; conducto más angosto mesodistal y más ancho vestibulopalatino.",
+"**Variaciones:** es el diente con más variaciones, salvo el tercer molar. Ausencia congénita, **laterales en forma de clavija** (puntiagudos), supernumerarios, tubérculo grande en el cíngulo, surcos profundos desde el cíngulo hacia la raíz, y curvatura radicular que dificulta tratamientos quirúrgicos y endodónticos. El lóbulo distal puede ser leve, moderado o marcado."],
+q:[["¿Qué diente tiene fosa palatina más profunda y cíngulo más convexo?","Lateral superior","Central superior","Central inferior","Lateral inferior","Además termina con frecuencia en una fosita profunda."],
+["Una variación típica del lateral superior es:","Forma de clavija","Tres raíces","Dos cúspides","Ausencia de cíngulo siempre","También ausencia congénita y supernumerarios."],
+["Erupción del lateral superior:","8–9 años","7–8 años","6–7 años","11–12 años","Calcificación al año; raíz completa a los 10–11."],
+["FDI del lateral superior izquierdo:","22","12","32","10","Universal 10; Palmer 2."]]},
+
+{e:"🔹",t:"Incisivos inferiores y encerado funcional",p:[
+"**Central inferior:** el diente más pequeño de la arcada; ocluye solo con **un** antagonista (el central superior). Corona más ancha vestibulolingual que mesodistal. Es el **único incisivo bilateralmente simétrico** desde vestibular. Rasgos tenues; tercio incisal inclinado hacia lingual (overbite); desgaste hacia el ángulo inciso-vestibular. **FDI 41 y 31 · Universal 25 y 24 · Palmer 1.**",
+"**Cronología del central inferior:** calcificación a los 3 meses · corona 4–5 años · erupción 6–7 años · raíz completa ~9 años. Recién erupcionado tiene tres mamelones; con el uso forma ángulos mesio y distoincisal de ~90°.",
+"**Caras del central inferior:** vestibular convexa con tres lóbulos; lingual más estrecha y lisa, crestas marginales y cíngulo convexo sin límite con el lóbulo central; proximales triangulares (borde lingual en «S»); la línea cervical mesial es más curva que la distal. **Vista incisal** casi triangular, borde perpendicular al eje largo. **Raíz** bastante recta, aplanada proximalmente, sección oval o en ocho; **un conducto** y tres cuernos pulpares.",
+"**Lateral inferior:** mayor en todos los sentidos que el central; **asimétrico**; ángulo mesioincisal recto y distoincisal redondeado, más cervical; rasgos más prominentes (crestas marginales, fosa lingual y cíngulo). Ocluye con la porción distal del borde palatoincisal del lateral superior. **FDI 42 y 32 · Universal 26 y 23 · Palmer 2.**",
+"**Cronología del lateral inferior:** calcificación a los 4 meses · corona 4–5 años · erupción 7–8 años · raíz completa a los 9 años. En vista incisal, el borde se inclina hacia lingual en distal para alinearse con el canino. **Raíz:** más ancha, gruesa y larga que la del central; ápice inclinado a vestibular o distal; surcos proximales (aspecto de «doble raíz»); conducto más grande y variable.",
+"**Encerado funcional (Bloque VI):** en el caso de una paciente que perdió un incisivo por resorción radicular y pérdida de soporte, se realiza un encerado funcional de diagnóstico para planificar el tratamiento. El conocimiento detallado de la morfología y ubicación de cada diente desarrolla la destreza motora necesaria para duplicar y restaurar piezas correctamente."],
+q:[["¿Qué incisivo es bilateralmente simétrico?","Central inferior","Lateral inferior","Central superior","Lateral superior","El lateral inferior es asimétrico."],
+["El central inferior ocluye con:","Solo el central superior","Central y lateral superiores","El canino superior","Solo el lateral superior","Es el único diente que contacta un solo antagonista."],
+["Erupción del central inferior:","6–7 años","7–8 años","8–9 años","9–10 años","El lateral inferior erupciona a los 7–8."],
+["FDI del lateral inferior derecho:","42","32","41","12","Universal 26; Palmer 2."]]},
+
+{e:"🐺",t:"Caninos permanentes",p:[
+"**Generalidades:** 4 caninos, tercer diente desde la línea media; las «piedras angulares» de los arcos. Los más estables, con raíces largas y gruesas, anclados firmemente; sostienen la musculatura facial. En oclusión amortiguan las fuerzas horizontales sobre los posteriores (**guía canina**). Son los únicos con **una sola cúspide cónica**, raíz única más larga de todos los dientes, y la cara palatina/lingual funciona como oclusal de los posteriores. Tienen 4 lóbulos: 3 vestibulares + el cíngulo; el lóbulo central termina en la cúspide (formada por 4 crestas).",
+"**Canino superior:** ubicado entre el lateral y el 1.er premolar; el diente más largo; «**Eye tooth**» (cercanía de la raíz a la órbita); eminencia canina. **FDI 13 y 23 · Universal 6 y 11 · Palmer 3.** **Cronología:** calcificación a los 4 meses · corona completa 6–7 años · erupción 11–12 años · raíz completa 13–15 años. **Contactos:** mesial en la unión de tercios incisal y medio; distal en el tercio medio.",
+"**Canino superior, vestibular y palatina:** trapezoidal con base incisal. El borde incisal tiene porción mesial (más corta) y distal (más larga) separadas por la punta de la cúspide; la mesial ocluye con el canino inferior y la distal con el 1.er premolar inferior. Tres lóbulos con ranuras mesio y distovestibular; ranura marginal distal de la cara vestibular. **Palatina:** en vez de fosa, una **cresta palatina** prominente; ranura palato-gingival que separa el cíngulo; crestas marginales y fosas M-P y D-P; el cíngulo puede formar un tubérculo.",
+"**Canino superior, proximales e incisal:** caras triangulares; el área de contacto está cerca del borde incisal; la cara distal es más corta y más convexa. **Vista incisal:** romboidal y **asimétrica** (la mitad distal es más ancha). **Raíz:** la más larga de todos los dientes, convexa, con ranura longitudinal distal frecuente. **Pulpa:** una cámara y un conducto largo y de fácil acceso; oval, más ancho en sentido V-P. **Variaciones:** cúspide roma o aguda, raíz muy larga o corta, curvada en gancho, a veces doble.",
+"**Canino inferior:** entre el lateral inferior y el 1.er premolar inferior, en la esquina de la mandíbula. **FDI 43 y 33 · Universal 27 y 22.** **Cronología:** calcificación 4–5 meses · corona 7 años · erupción 9–10 años · raíz completa 13 años. **Contactos:** mesial en el tercio incisal; distal inmediatamente cervical a la unión de los tercios incisal y medio.",
+"**Canino inferior, rasgos:** corona más estrecha mesiodistalmente que la del superior, casi siempre igual o hasta 1 mm más larga; cíngulo menos desarrollado; cara lingual lisa, parecida a la de los incisivos inferiores; la punta de la cúspide queda alineada con el centro, algo hacia lingual. **Raíz:** la más larga de la mandíbula y segunda de todos los dientes (después del canino superior); puede bifurcarse y tener **dos conductos**. En vista incisal es más simétrico.",
+"**Diferencias canino superior vs. inferior:** diámetro transversal mayor en caras libres (sup.) o proximales (inf.); borde incisal hacia vestibular (sup.) o alineado con el eje (inf.); cara palatina más oblicua que la lingual; mayor convexidad mesiodistal y más oblicuidad en el superior; cíngulo y crestas marginales notables arriba y de poco relieve abajo; raíz oval, más alargada V-L en el inferior; mayor desviación distal de la raíz en el superior; el inferior tiene proporción corono-radicular con corona más larga; vertientes del borde incisal más oblicuas en el superior."],
+q:[["La característica exclusiva de los caninos es:","Una sola cúspide cónica","Dos cúspides","Tres raíces","Ausencia de cíngulo","Además tienen la raíz más larga."],
+["¿Cuándo erupciona el canino superior?","11–12 años","9–10 años","7–8 años","6–7 años","El inferior lo hace a los 9–10 años."],
+["El canino superior se conoce como:","Eye tooth (diente ojo)","Diente de Carabelli","Diente de Hutchinson","Cúspide de apoyo","Por la proximidad de su raíz a la órbita."],
+["¿Cuál tiene la raíz más larga de todos los dientes?","Canino superior","Canino inferior","Incisivo central superior","1.er molar","El canino inferior es el segundo."],
+["FDI del canino inferior izquierdo:","33","43","23","13","Universal 22."]]}
+];
+
+const $=s=>document.querySelector(s),app=$("#app");
+const B=t=>t.replace(/\*\*(.+?)\*\*/g,"<b>$1</b>").replace(/\*(.+?)\*/g,"<i>$1</i>");
+const sh=a=>{a=a.slice();for(let i=a.length-1;i>0;i--){let j=Math.random()*(i+1)|0;[a[i],a[j]]=[a[j],a[i]]}return a};
+const prog=M.map(()=>({c:0,n:0,best:0}));
+const OK=["¡Excelente, Joe! 🌟","¡Muy bien! Vas por buen camino 💪","¡Correcto! Sigue así 🦷✨","¡Así se hace, doctora! 👩‍⚕️"];
+const NO=["Casi 💜 Mira la explicación y la próxima la aciertas.","No pasa nada, así se aprende. Repasa esta idea 📖","Buen intento. Fíjate en la clave de abajo 🔎"];
+const pick=a=>a[Math.random()*a.length|0];
+let Q=[],qi=0,sc=0,mi=-1,miss=[],isExam=false;
+
+function home(){
+  const tot=prog.reduce((a,p)=>a+p.c,0),n=prog.reduce((a,p)=>a+p.n,0);
+  app.innerHTML=`<div class="hero"><h1>Hola, Joe 👋🦷</h1><p><b>Anatomía Dentaria y Oclusión · Parcial 1</b></p><p>Estudia cada módulo, practica con preguntas tipo examen y mira cómo sube tu dominio.</p><p>${n?`Llevas ${tot} de ${n} respuestas correctas (${Math.round(tot/n*100)}%).`:"Empieza por el módulo que quieras. ¡Tú puedes!"}</p></div>
+  <div class="row"><button class="btn" onclick="exam()">🎯 Simulacro de examen (12 preguntas mezcladas)</button></div>`+
+  M.map((m,i)=>{const p=prog[i],pc=p.n?Math.round(p.best):0;return`<button class="card mod" onclick="mod(${i})"><div class="em">${m.e}</div><div style="flex:1"><b>Módulo ${i+1}</b> · ${m.t}<br><small>${m.p.length} apartados · ${m.q.length} preguntas${p.n?` · mejor: ${pc}%`:""}</small><div class="bar"><i style="width:${pc}%"></i></div></div></button>`}).join("")+
+  `<p style="color:var(--mut);font-size:.85rem;text-align:center">Material: guía de estudio del Parcial 1 (UCV, Odontología). Tu avance se guarda mientras la página esté abierta.</p>`;
+  scrollTo(0,0)}
+
+function mod(i,tab){mi=i;const m=M[i];
+  app.innerHTML=`<div class="top"><button class="btn alt" onclick="home()">← Módulos</button><b>${m.e} Módulo ${i+1}</b></div><h2>${m.t}</h2>
+  <div class="tutor"><span>👩‍🏫</span><div>Lee con calma cada apartado. Cuando termines, toca <b>Practicar</b> y te evalúo.</div></div>`+
+  m.p.map((x,k)=>`<div class="pt"><small style="color:var(--pri)"><b>Apartado ${k+1}</b></small><br>${B(x)}</div>`).join("")+
+  `<div class="row"><button class="btn" onclick="quiz(${i})">✏️ Practicar este módulo</button><button class="btn alt" onclick="home()">Volver</button></div>`;scrollTo(0,0)}
+
+function quiz(i){mi=i;isExam=false;Q=sh(M[i].q.map(q=>[...q,i]));qi=0;sc=0;miss=[];ask()}
+function exam(){mi=-1;isExam=true;Q=sh(M.flatMap((m,i)=>m.q.map(q=>[...q,i]))).slice(0,12);qi=0;sc=0;miss=[];ask()}
+
+function ask(){const q=Q[qi],opts=sh([q[1],q[2],q[3],q[4]]);
+  app.innerHTML=`<div class="top"><button class="btn alt" onclick="${isExam?"home()":`mod(${mi})`}">✕ Salir</button><b>${qi+1} / ${Q.length}</b></div>
+  <div class="bar"><i style="width:${qi/Q.length*100}%"></i></div>
+  ${isExam?`<small style="color:var(--mut)">${M[q[6]].e} ${M[q[6]].t}</small>`:""}
+  <div class="card"><h2>${q[0]}</h2><div id="o">${opts.map((o,k)=>`<button class="opt" data-v="${o.replace(/"/g,"&quot;")}">${o}</button>`).join("")}</div><div id="fb"></div></div>`;
+  document.querySelectorAll(".opt").forEach(b=>b.onclick=()=>ans(b,q))}
+
+function ans(b,q){const ok=b.dataset.v===q[1];
+  document.querySelectorAll(".opt").forEach(x=>{x.disabled=true;if(x.dataset.v===q[1])x.classList.add("ok")});
+  if(ok)sc++;else{b.classList.add("no");miss.push(q)}
+  $("#fb").innerHTML=`<div class="tutor"><span>${ok?"🎉":"💡"}</span><div><b>${ok?pick(OK):pick(NO)}</b><br>Respuesta: <b>${q[1]}</b>.<br>${q[5]}</div></div><button class="btn" onclick="nxt()">${qi+1<Q.length?"Siguiente →":"Ver resultado"}</button>`}
+
+function nxt(){qi++;qi<Q.length?ask():fin()}
+function fin(){const pc=Math.round(sc/Q.length*100);
+  Q.forEach(q=>{});const mark=(i,c,n)=>{prog[i].c+=c;prog[i].n+=n};
+  if(isExam){M.forEach((m,i)=>{const t=Q.filter(q=>q[6]===i);if(t.length){const c=t.filter(q=>!miss.includes(q)).length;mark(i,c,t.length);prog[i].best=Math.max(prog[i].best,c/t.length*100)}})}
+  else{mark(mi,sc,Q.length);prog[mi].best=Math.max(prog[mi].best,pc)}
+  const msg=pc>=90?"¡Dominas este tema! Estás lista para el examen 🏆":pc>=70?"¡Muy buen nivel! Repasa lo que fallaste y quedas perfecta 🌸":pc>=50?"Vas avanzando. Vuelve a leer el módulo y reintenta 📚":"No te desanimes, Joe. Lee el módulo con calma y vuelve a intentarlo; cada intento suma 💜";
+  const wk=[...new Set(miss.map(q=>q[6]))];
+  app.innerHTML=`<div class="card"><div class="big">${pc}%</div><p style="text-align:center"><b>${sc} de ${Q.length}</b> correctas</p><div class="tutor"><span>👩‍🏫</span><div>${msg}</div></div>
+  ${wk.length?`<p><b>Para repasar:</b></p>`+wk.map(i=>`<div class="pt">${M[i].e} Módulo ${i+1}: ${M[i].t}</div>`).join(""):"<p style='text-align:center'>🎉 Sin errores. ¡Perfecto!</p>"}
+  <div class="row"><button class="btn" onclick="${isExam?"exam()":`quiz(${mi})`}">🔁 Intentar de nuevo</button>${isExam||!miss.length?"":`<button class="btn alt" onclick="mod(${mi})">📖 Repasar módulo</button>`}<button class="btn alt" onclick="home()">Inicio</button></div></div>`;scrollTo(0,0)}
+home();
+</script></body></html>
